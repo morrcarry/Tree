@@ -1,0 +1,16 @@
+class Solution {
+    void in(Node* root, vector<int>& v){
+    if(root==NULL)
+    return;
+    in(root->left,v);                                         
+    v.push_back(root->data);                                 4.//Pushes the root(i.e the leftmost element) into the vector one by one.
+    in(root->right,v);
+}
+
+  public:
+    vector<int> inOrder(Node* root) {                        1.//We are given the root of the tree.
+    vector<int>v;                                            2.//Vector for storing preorder traversal.
+    in(root,v);                                              3.//Function for inorder computation.
+    return v;                                                5.// Return the vector.
+    }
+};
