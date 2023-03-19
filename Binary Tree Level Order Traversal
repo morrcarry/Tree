@@ -1,0 +1,29 @@
+class Solution {
+public:
+    vector<vector<int>> levelOrder(TreeNode* root) {
+        vector<vector<int>>v;                       1.//To store level order traversal.
+        vector<int>val;                             2.//To store values of each level in vector and then push back this , to v vector.
+        if(root==nullptr)
+        return v;
+       queue<TreeNode*>q;                           3.//Queue for BFS traversal algo.
+        int level=-1;
+        q.push(root);
+        while(!q.empty()){
+        
+            int len=q.size();
+            level=level+1;
+            
+            for(int i=0;i<len;i++){                 4.//Loop for storing each value at that level;
+                TreeNode* temp=q.front();
+                val.push_back(temp->val);
+                q.pop();
+            if(temp->left!=nullptr)
+            q.push(temp->left);
+            if(temp->right!=nullptr)
+            q.push(temp->right); }
+            v.push_back(val);                     5.//Same as point 2.
+            val.resize(0);
+}                                                 
+return v;                                         6.//Return ans,
+}
+};
