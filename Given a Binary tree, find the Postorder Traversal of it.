@@ -1,0 +1,16 @@
+class Solution {
+void post(Node* root, vector<int>& v){
+    if(root==NULL)
+    return;
+    post(root->left,v);
+    post(root->right,v);
+    v.push_back(root->data);                                4.//Pushes the root(after all left and right values) into the vector one by one.
+}
+
+vector <int> postOrder(Node* root)                          1.//We are given the root of the tree.
+{                                                           
+        vector<int>v;                                       2.//Vector for storing preorder traversal.                            
+        post(root,v);                                       3.//Function for postorder computation.
+        return v;                                           5.// Return the vector.
+   }
+};
