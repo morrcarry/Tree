@@ -1,3 +1,4 @@
+class Solution {
 void pre(Node* root, vector<int>& v){
     if(root==NULL)
     return;
@@ -10,5 +11,5 @@ vector <int> preorder(Node* root)            1.//We are given the root of the tr
     vector<int>v;                            2.//Vector for storing preorder traversal.
     pre(root,v);                             3.//Function for preorder computation.
     return v;                                5.// Return the vector.
-  
-}
+   }
+};
